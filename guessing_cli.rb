@@ -1,15 +1,15 @@
 require 'pry'
 
 def exit_game
-  print "Goodbye!"
+  puts "Goodbye!"
 end
 
 def greetings
-  print "Guess a number between 1 and 6."
+  puts "Guess a number between 1 and 6."
 end
 
 def correct
-  print "You guessed the correct number!"
+  puts "You guessed the correct number!"
 end
 
 
