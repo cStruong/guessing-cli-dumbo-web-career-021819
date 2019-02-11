@@ -1,28 +1,33 @@
 require 'pry'
 
 def exit_game
-  puts "Goodbye!"
+  print "Goodbye!"
 end
 
 def greetings
-  puts "Guess a number between 1 and 6."
+  print "Guess a number between 1 and 6."
 end
 
 def correct
-  puts "You guessed the correct number!"
+  print "You guessed the correct number!"
 end
+
 
 def run_guessing_game
   greetings
   user_num = gets.chomp
-  cpu_num = rand(1..6)
+  cpu_num = rand(1..6).to_s
   
-  if user_num == exit
+  if user_num == "exit"
     exit_game
-  elsif user_num = cpu_num
+  elsif user_num == cpu_num
     correct
+    run_guessing_game
   else
-    return "The computer guessed #{cpu_num}"
+    puts "The computer guessed #{cpu_num}."
+    run_guessing_game
   end
 
 end
+
+run_guessing_game
